@@ -19,11 +19,9 @@ void loop() {
   
   Serial.print("Temperature = "); // monitoring the values on serial monitoring
   Serial.print(temp_val);
-  Serial.print(" Degree Celsius\n");
- 
-  
- if(temp_val<30){
-  if(LEDtime.update())//Checks to see if set time has past
+  Serial.print(" Degree Celsius\n");  
+  if(temp_val<30){
+   if(LEDtime.update())//Checks to see if set time has past
   {
     // if the LED is off turn it on and vice-versa:
     if (ledState == LOW)
@@ -33,9 +31,9 @@ void loop() {
 
     // set the LED with the ledState of the variable:
     digitalWrite(LEDpin, ledState);
-    
   }
-} if(temp_val>30){
+} 
+  if(temp_val>30){
   if(LEDtime1.update())//Checks to see if set time has past
   {
     // if the LED is off turn it on and vice-versa:
@@ -46,7 +44,6 @@ void loop() {
 
     // set the LED with the ledState of the variable:
     digitalWrite(LEDpin, ledState);
-     
   }
 }
 }
